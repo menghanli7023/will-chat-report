@@ -18,8 +18,8 @@
 	      --soft: rgba(255, 255, 255, 0.52);
 	      --glass: linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.34));
 	      --shadow: 0 24px 70px rgba(111, 68, 145, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.68);
-	      --font-body: "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "STSong", serif;
-	      --font-display: "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "STSong", serif;
+--font-body: "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "STSong", serif;
+      --font-display: "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "STSong", serif;
 	    }
 
 	    * { box-sizing: border-box; }
@@ -478,7 +478,7 @@
 
     @media (max-width: 860px) {
       section { min-height: auto; padding: 44px 18px; }
-      .hero { min-height: 100vh; }
+      .hero { min-height: auto; padding: 44px 18px; }
       .hero-footer,
       .duo,
       .phase {
@@ -491,18 +491,29 @@
       .type-grid {
         grid-template-columns: 1fr 1fr;
       }
-      .daily-chart { gap: 1px; }
-      .hours { gap: 3px; }
+      .daily-chart { gap: 1px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .hours { gap: 3px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
       .hour b { display: none; }
+      h1 { font-size: clamp(36px, 10vw, 60px); }
+      h2 { font-size: clamp(28px, 6vw, 48px); }
     }
 
     @media (max-width: 520px) {
+      section { padding: 32px 14px; }
+      .hero { padding: 32px 14px; }
       .metrics,
       .keywords,
       .type-grid {
         grid-template-columns: 1fr;
       }
       .person li { display: grid; }
+      .metric { min-height: auto; padding: 16px; }
+      .keyword { min-height: auto; }
+      .type-card { min-height: auto; }
+      .hero-number { font-size: clamp(56px, 20vw, 80px); }
+      h1 { font-size: clamp(32px, 9vw, 48px); }
+      h2 { font-size: clamp(24px, 6vw, 36px); }
+      .kicker { font-size: 12px; padding: 6px 10px; }
     }
   </style>
 </head>
